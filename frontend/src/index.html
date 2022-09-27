@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    {{> meta}}
+
+    <title>boiler</title>
+</head>
+<body>
+
+{{> header}}
+
+<div class="container">
+    <h1>Main Page</h1>
+
+    <a href="/lower/" class="font-bold text-4xl underline py-8 block">lower pageへ</a>
+</div>
+
+
+<main class="container">
+    <h2>Turbo-Frame</h2>
+
+    <turbo-frame id="bar">
+        <h3>フレーム内は置換される</h3>
+        <a href="frames/foo/">リクエスト: foo.html</a>
+    </turbo-frame>
+
+
+    <div class="py-8 bg-amber-200" data-controller="hello">
+
+        <input data-hello-target="name" type="text">
+        <input data-hello-target="name2" type="text">
+
+        <button data-action="click->hello#greet">Greet</button>
+        <button data-action="click->hello#greetWithName">greetWithName</button>
+
+    </div>
+
+    <div class="py-8">
+        <table>
+            <tbody>
+            <td class="block">
+                <label>
+                    <input type="checkbox" data-checkbox-select-all-target="checkboxAll" />
+                    <span>Select All / Deselect All</span>
+                </label>
+            </td>
+
+            <td class="block">
+                <label>
+                    <input type="checkbox" data-checkbox-select-all-target="checkbox" value="1" />
+                    <span>Team 1</span>
+                </label>
+            </td>
+
+            <td class="block">
+                <label>
+                    <input type="checkbox" data-checkbox-select-all-target="checkbox" checked="checked" value="2" />
+                    <span>Team 2</span>
+                </label>
+            </td>
+
+            <td class="block">
+                <label>
+                    <input type="checkbox" data-checkbox-select-all-target="checkbox" value="3" />
+                    <span>Team 3</span>
+                </label>
+            </td>
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <div class="py-20">
+        <div data-controller="checkbox-select-all">
+            <input type="checkbox" id="all" name="all" value="all" data-checkbox-select-all-target="parent" data-action="change->checkbox-select-all#toggleChildren">
+            <label for="all"> Select all</label><br>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" data-checkbox-select-all-target="child" data-action="change->checkbox-select-all#toggleParent">
+            <label for="vehicle1"> I have a bike</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" data-checkbox-select-all-target="child" data-action="change->checkbox-select-all#toggleParent">
+            <label for="vehicle2"> I have a car</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" data-checkbox-select-all-target="child" data-action="change->checkbox-select-all#toggleParent">
+            <label for="vehicle3"> I have a boat</label><br><br>
+        </div>
+    </div>
+
+
+</main>
+
+{{> footer}}
+
+<script type="module" src="./main.ts"></script>
+</body>
+</html>
