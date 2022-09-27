@@ -1,4 +1,5 @@
 import {Controller} from '@hotwired/stimulus';
+// @ts-ignore
 import CheckboxSelectAll from 'stimulus-checkbox-select-all'
 
 export class AllCheckboxController extends Controller<CheckboxSelectAll> {

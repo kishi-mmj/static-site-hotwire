@@ -19,8 +19,10 @@
 <main class="container">
     <h2>Turbo-Frame</h2>
 
+
     <turbo-frame id="bar">
         <h3>フレーム内は置換される</h3>
+        <!--  本来はサーバーで返される  -->
         <a href="frames/foo/">リクエスト: foo.html</a>
     </turbo-frame>
 
@@ -82,6 +84,14 @@
             <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" data-checkbox-select-all-target="child" data-action="change->checkbox-select-all#toggleParent">
             <label for="vehicle3"> I have a boat</label><br><br>
         </div>
+    </div>
+
+
+    <div class="py-20">
+        <ul data-controller="sortable" data-sortable-animation-value="150">
+            <li>Pet the cat</li>
+            <li>Get the groceries</li>
+        </ul>
     </div>
 
 

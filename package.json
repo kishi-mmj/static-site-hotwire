@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "stimulus-sortable": "^3.2.0"
+  }
+}
